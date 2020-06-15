@@ -1,4 +1,7 @@
 __pycache__/
 wiki_data/
+nouns/
+verbs/
 wiki.txt
 wiki_wakati.txt
+generateCSV.sh

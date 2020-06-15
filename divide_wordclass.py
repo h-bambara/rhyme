@@ -3,7 +3,7 @@ import MeCab
 import re
 import anotate_words
 
-def divide_wordclass(file_line):
+def divide_wordclass(file_line, noun_path, verb_path):
     mecab = MeCab.Tagger ('-Ochasen')
 
     result = mecab.parse(file_line)
@@ -13,10 +13,8 @@ def divide_wordclass(file_line):
     verbList = []#「動詞」を格納するリスト
 
     japanese = re.compile('[ぁ-んァ-ン一-龥]+')#日本語のみ抽出
-    path = '' #動詞を吐き出すファイルを指定する
-    f1 = open(path, 'a')
-    path = '' #名詞を吐き出すファイルを指定する
-    f2 = open(path, 'a')
+    f1 = open(noun_path, 'a')#名詞を吐き出すファイルを指定する 
+    f2 = open(verb_path, 'a')#動詞を吐き出すファイルを指定する
 
     for line in lines:
         feature = line.split('\t')

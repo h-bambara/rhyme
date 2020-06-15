@@ -11,6 +11,9 @@ def anotate(word):
 
     conv = kakasi_.getConverter()
 
-    rhyme = re.sub('[^aeiouAEIOU]', '', conv.do(word))
+    phonetic = conv.do(word)
+    rhyme = re.sub('[^aeiouAEIOU]', '', phonetic)
 
-    return rhyme
+    rhyme_set = phonetic + ',' + rhyme
+
+    return rhyme_set
