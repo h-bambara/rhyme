@@ -1,4 +1,5 @@
 __pycache__/
+.venv/
 wiki_data/
 nouns/
 verbs/
